@@ -272,7 +272,14 @@ public class CalculatorFrame extends JFrame
             		}
             		else if (equality.isSelected())
             		{
-            			result = Boolean.toString(firstNum == secondNum);
+            			if (firstNum == secondNum)
+            			{
+            				result = "True";
+            			}
+            			else
+            			{
+            				result = "False";
+            			}
             		} 
 
  
