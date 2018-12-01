@@ -165,6 +165,11 @@ public class CalculatorFrame extends JFrame
         add.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	// TODO: change the opSign, clear the error message and compute result.
+            	JRadioButton clicked = (JRadioButton) e.getSource();
+            	if (clicked == add)
+            	{
+            		opSign.setText("*");
+            	}
             } 
         });
         
