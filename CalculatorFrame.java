@@ -168,7 +168,9 @@ public class CalculatorFrame extends JFrame
             	JRadioButton clicked = (JRadioButton) e.getSource();
             	if (clicked == add)
             	{
-            		opSign.setText("*");
+            		opSign.setText("+  ");
+            		errorMessage.setText("");
+            		button.doClick();
             	}
             } 
         });
@@ -176,11 +178,30 @@ public class CalculatorFrame extends JFrame
         multiply.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	// TODO: change the opSign, clear the error message and compute result.
+            	opSign.setText("*  ");
+        		errorMessage.setText("");
+        		button.doClick();
             }
         });
         
         // TODO: implement the actionlisteners for the divide and equality buttons the same way:
+        divide.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	// TODO: change the opSign, clear the error message and compute result.
+            	opSign.setText("/  ");
+        		errorMessage.setText("");
+        		button.doClick();
+            }
+        });
         
+        equality.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	// TODO: change the opSign, clear the error message and compute result.
+            	opSign.setText("==  ");
+        		errorMessage.setText("");
+        		button.doClick();
+            }
+        });
         /*
          * Set the Change Listener for the Slider. When a change
          * occurs, the text in firstBox should be set to the slider value.
@@ -194,6 +215,9 @@ public class CalculatorFrame extends JFrame
         slider.addChangeListener(new ChangeListener() {
         	public void stateChanged(ChangeEvent e) {
         		// TODO: change the text in the first JTextField. Clear error and result
+        		firstBox.setText(Integer.toString(slider.getValue()));
+        		errorMessage.setText("");
+        		computeResult.setText("");
             }
         });
 
