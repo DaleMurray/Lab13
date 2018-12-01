@@ -19,7 +19,7 @@ import javax.swing.event.ChangeListener;
  * 
  * This class creates a GUI for simple calculator application
  * 
- * @author CS2334. Modified by: Stephen
+ * @author CS2334. Modified by: Dale
  * @version 2018-11-28
  */
 public class CalculatorFrame extends JFrame
