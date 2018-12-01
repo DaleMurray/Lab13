@@ -170,7 +170,7 @@ public class CalculatorFrame extends JFrame
             	{
             		opSign.setText("+  ");
             		errorMessage.setText("");
-            		button.doClick();
+            		computeResult.setText("");
             	}
             } 
         });
@@ -180,7 +180,7 @@ public class CalculatorFrame extends JFrame
             	// TODO: change the opSign, clear the error message and compute result.
             	opSign.setText("*  ");
         		errorMessage.setText("");
-        		button.doClick();
+        		computeResult.setText("");
             }
         });
         
@@ -190,7 +190,7 @@ public class CalculatorFrame extends JFrame
             	// TODO: change the opSign, clear the error message and compute result.
             	opSign.setText("/  ");
         		errorMessage.setText("");
-        		button.doClick();
+        		computeResult.setText("");
             }
         });
         
@@ -199,7 +199,8 @@ public class CalculatorFrame extends JFrame
             	// TODO: change the opSign, clear the error message and compute result.
             	opSign.setText("==  ");
         		errorMessage.setText("");
-        		button.doClick();
+        		computeResult.setText("");
+
             }
         });
         /*
@@ -254,7 +255,28 @@ public class CalculatorFrame extends JFrame
                      * Finally, perform the operation on the integers and write out the result as
                      * a String to the computeResult text field.
                      */
-                    
+            		int firstNum =  Integer.parseInt(firstBox.getText());
+                    int secondNum =  Integer.parseInt(secondBox.getText());
+                    String result = "";
+            		if (add.isSelected())
+            		{
+            			result = Integer.toString(firstNum + secondNum);
+            		} 
+            		else if (multiply.isSelected())
+            		{
+            			result = Integer.toString(firstNum * secondNum);
+            		}
+            		else if (divide.isSelected())
+            		{
+            			result = Integer.toString(firstNum / secondNum);
+            		}
+            		else if (equality.isSelected())
+            		{
+            			result = Boolean.toString(firstNum == secondNum);
+            		} 
+
+ 
+                    computeResult.setText(result);
                     // Clear the error message text field:
                     errorMessage.setText("");
                 }
@@ -263,13 +285,17 @@ public class CalculatorFrame extends JFrame
                 // (2) Divide by zero -> ArithmeticException
                 catch (NumberFormatException error) {
                 	// TODO: display the error message "ERROR: Please enter a valid integer."
+                	errorMessage.setText("ERROR: Please enter a valid integer.");
                     // in the error message text field.
                 	// TODO: Clear computeResult
+                	computeResult.setText("");
                 }
                 catch (ArithmeticException error) {
                 	// TODO: display the error message "ERROR: Tried to divide by 0."
+                	errorMessage.setText("ERROR: Tried to divide by 0.");
                     // in the error message text field.
                 	// TODO: Clear computeResult
+                	computeResult.setText("");
                 }
             }
         });
