@@ -136,7 +136,11 @@ public class CalculatorFrame extends JFrame
 
         // TODO: add the panels into the frame. Remember that this class is a JFrame, so you should simply call
         // the add method of this object that is being constructed.
-        
+        add(panel0);
+        add(panel1);
+        add(panel2);
+        add(panel3);
+        add(panel4);
         //default to + operator
         add.setSelected(true);  //remember, the button group ensures only one button is selected
         opSign.setText("+  ");
